@@ -1,0 +1,122 @@
+<div class="alert alert-info animate__animated animate__bounceIn" *ngIf="!pais; else divPais">
+    Espero por favor...
+</div>
+
+<ng-template #divPais class="row mt-5">
+
+
+    <div class="col-lg-12 col-md-12">
+
+        <div class="card mx-auto" style="width: 400px;height: 200px;">
+
+            <!-- Div de sección de animación -->
+            <div class="animate__animated animate__bounceIn">
+
+                <img [src]="pais.flags.svg" class="card-img-top" alt="...">
+                <div class="card-body animate__animated animate__bounceIn animate__delay-1s">
+                    <h5 class="card-title text-center fs-1">{{ pais.name.common }}</h5>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p><strong>Ploblación : </strong> {{pais.population | number}}</p>
+                        </div>
+                        <div class="col-lg-12">
+                            <p><strong>Capital : </strong> {{pais.capital[0]}}</p>
+                        </div>
+                        <div class="col-lg-12">
+                            <p><strong>Subegion : </strong> {{pais.subregion}}</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="row g-1 animate__animated animate__bounceIn animate__delay-2s">
+
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                    aria-controls="flush-collapseOne">
+                                    Traducciones
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <span
+                                        class="badge bg-primary col fs-5 ms-1">{{pais.translations['ara'].common}}</span>
+                                    <span
+                                        class="badge bg-primary col fs-5 ms-1">{{pais.translations['bre'].common}}</span>
+                                    <span
+                                        class="badge bg-primary col fs-5 ms-1">{{pais.translations['ces'].common}}</span>
+                                    <span
+                                        class="badge bg-primary col fs-5 ms-1">{{pais.translations['cym'].common}}</span>
+                                    <span
+                                        class="badge bg-primary col fs-5 ms-1">{{pais.translations['deu'].common}}</span>
+                                    <span
+                                        class="badge bg-primary col fs-5 ms-1">{{pais.translations['est'].common}}</span>
+                                    <span
+                                        class="badge bg-primary col fs-5 ms-1">{{pais.translations['fin'].common}}</span>
+                                    <span
+                                        class="badge bg-primary col fs-5 ms-1">{{pais.translations['fra'].common}}</span>
+                                    <span
+                                        class="badge bg-primary col fs-5 ms-1">{{pais.translations['hrv'].common}}</span>
+                                    <span
+                                        class="badge bg-primary col fs-5 ms-1">{{pais.translations['hun'].common}}</span>
+                                    <span
+                                        class="badge bg-primary col fs-5 ms-1">{{pais.translations['ita'].common}}</span>
+                                    <span
+                                        class="badge bg-primary col fs-5 ms-1">{{pais.translations['jpn'].common}}</span>
+                                    <span
+                                        class="badge bg-primary col fs-5 ms-1">{{pais.translations['kor'].common}}</span>
+                                    <span
+                                        class="badge bg-primary col fs-5 ms-1">{{pais.translations['nld'].common}}</span>
+                                    <span
+                                        class="badge bg-primary col fs-5 ms-1">{{pais.translations['per'].common}}</span>
+                                    <span
+                                        class="badge bg-primary col fs-5 ms-1">{{pais.translations['pol'].common}}</span>
+                                    <span
+                                        class="badge bg-primary col fs-5 ms-1">{{pais.translations['por'].common}}</span>
+                                    <span
+                                        class="badge bg-primary col fs-5 ms-1">{{pais.translations['rus'].common}}</span>
+                                    <span
+                                        class="badge bg-primary col fs-5 ms-1">{{pais.translations['slk'].common}}</span>
+                                    <span
+                                        class="badge bg-primary col fs-5 ms-1">{{pais.translations['spa'].common}}</span>
+                                    <span
+                                        class="badge bg-primary col fs-5 ms-1">{{pais.translations['swe'].common}}</span>
+                                    <span
+                                        class="badge bg-primary col fs-5 ms-1">{{pais.translations['tur'].common}}</span>
+                                    <span
+                                        class="badge bg-primary col fs-5 ms-1">{{pais.translations['urd'].common}}</span>
+                                    <span
+                                        class="badge bg-primary col fs-5 ms-1">{{pais.translations['zho'].common}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-12 col-md-12 mt-4 animate__animated animate__fadeIn animate__delay-3s">
+
+                <h4 class="fw-bold">Datos de la Api :</h4>
+
+                <pre>
+                    <code>
+                        {{ pais | json}}
+                    </code>
+                </pre>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+</ng-template>
